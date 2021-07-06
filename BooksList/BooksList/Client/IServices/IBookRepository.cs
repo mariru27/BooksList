@@ -1,11 +1,14 @@
-﻿using System;
+﻿using BooksList.Shared.Models;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BooksList.Client.IServices
 {
-    public class IBookRepository
+    public interface IBookRepository
     {
+        public List<Book> Books { get; set; }
+
+        public Task GetBooksAsync();
+
     }
 }
