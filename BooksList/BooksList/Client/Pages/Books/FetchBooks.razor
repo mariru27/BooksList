@@ -3,6 +3,7 @@
 @inject IBookRepository BookRepository
 
 <h3>Books</h3>
+
 @if (books == null)
 {
     <text>Loading...</text>
@@ -14,17 +15,20 @@ else if (books.Any() == false)
 {
 
 
-    @foreach (var bo in books)
-    {
-        <Card book="bo"></Card>
-    }
+    <h3>First example</h3>
+    <Column books="books"></Column>
+    <h3>Second example</h3>
+    <Column books="books1"></Column>
 
 }
 @code {
     List<Book> books { get; set; }
+    List<Book> books1 { get; set; }
+
     protected override async Task OnInitializedAsync()
     {
         await BookRepository.GetBooksAsync();
         books = BookRepository.Books;
+        books1 = BookRepository.Books;
     }
 }

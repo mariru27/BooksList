@@ -1,0 +1,28 @@
+﻿@page "/books/column"
+
+@inject IJSRuntime js
+@inject IBookRepository BookRepository
+
+@if (books == null)
+{
+    <text>Loading...</text>
+}
+else if (books.Any() == false)
+{
+    <text>No Records Found.</text>
+}
+else
+{
+
+    <div class="card-group">
+        
+        @foreach (var bo in books)
+        {
+            <Card book="bo"></Card>
+        }
+    </div>
+
+}
+@code {
+    [Parameter] public List<Book> books { get; set; }
+}
