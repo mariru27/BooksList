@@ -83,6 +83,13 @@ using BooksList.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 11 "C:\Users\Marina Rusu\Desktop\BooksList\BooksList\BooksList\Client\_Imports.razor"
+using BooksList.Shared.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Users\Marina Rusu\Desktop\BooksList\BooksList\BooksList\Client\Pages\FetchData.razor"
 using BooksList.Shared;
 
