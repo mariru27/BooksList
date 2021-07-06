@@ -1,5 +1,6 @@
 ﻿using BooksList.Shared.Models;
 using Microsoft.EntityFrameworkCore;
+
 namespace BooksList.Server.Data
 {
     public class BooksListContext : DbContext
