@@ -1,4 +1,5 @@
 ﻿using BooksList.Server.Data;
+using BooksList.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
@@ -19,21 +20,25 @@ namespace BooksList.Server.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var s = await _context.Books.ToListAsync();
-            return Ok(s);
+            var books = await _context.Books.ToListAsync();
+            return Ok(books);
         }
 
         // GET api/<BooksController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            var book = await _context.Books.FirstOrDefaultAsync(a => a.IdBook == id);
+            return Ok(book);
         }
 
         // POST api/<BooksController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> Post(Book book)
         {
+            _context.Books.Add(book);
+            await _context.SaveChangesAsync();
+            return Ok(book.IdBook);
         }
 
         // PUT api/<BooksController>/5
