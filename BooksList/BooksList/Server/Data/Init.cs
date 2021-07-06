@@ -23,6 +23,9 @@ namespace BooksList.Server.Data
                 {
                     booksListContext.States.Add(state);
                 }
+                Book book = new Book { Author = "test", Description = "test", Name = "test", State = states[1] };
+
+                booksListContext.Books.Add(book);
                 booksListContext.SaveChanges();
             }
 
