@@ -1,0 +1,17 @@
+﻿@page "/books/card"
+
+<h3>Card</h3>
+
+<div class="card">
+    <h5 class="card-header">@book.Name</h5>
+    <div class="card-body">
+        <h5 class="card-title">@book.Author</h5>
+        <p class="card-text">@book.Description</p>
+        @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+    </div>
+</div>
+
+@code {
+    [Parameter] public Book book { get; set; }
+
+}

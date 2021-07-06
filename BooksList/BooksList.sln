@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksList.Server", "BooksList\Server\BooksList.Server.csproj", "{009FCEE5-E9F2-47D3-B9CD-F64771B2D30D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksList.Server", "BooksList\Server\BooksList.Server.csproj", "{009FCEE5-E9F2-47D3-B9CD-F64771B2D30D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksList.Client", "BooksList\Client\BooksList.Client.csproj", "{71CF8FF4-9A12-4C93-8CEE-EAE2188500D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksList.Client", "BooksList\Client\BooksList.Client.csproj", "{71CF8FF4-9A12-4C93-8CEE-EAE2188500D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksList.Shared", "BooksList\Shared\BooksList.Shared.csproj", "{A57D37CE-59C7-4E0D-B0E4-6FB12898A1FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksList.Shared", "BooksList\Shared\BooksList.Shared.csproj", "{A57D37CE-59C7-4E0D-B0E4-6FB12898A1FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
