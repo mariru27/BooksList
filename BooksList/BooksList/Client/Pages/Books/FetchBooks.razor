@@ -1,6 +1,30 @@
 ﻿@page "/books/fetchbooks"
+@inject IJSRuntime js
+@inject IBookRepository BookRepository
+
 <h3>Books</h3>
+@if (books == null)
+{
+    <text>Loading...</text>
+}
+else if (books.Any() == false)
+{
+    <text>No Records Found.</text>
+}else
+{
 
+
+    @foreach (var bo in books)
+    {
+        <Card book="bo"></Card>
+    }
+
+}
 @code {
-
+    List<Book> books { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        await BookRepository.GetBooksAsync();
+        books = BookRepository.Books;
+    }
 }
