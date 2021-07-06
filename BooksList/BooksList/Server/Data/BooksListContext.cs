@@ -10,11 +10,16 @@ namespace BooksList.Server.Data
 
         }
 
-        public DbSet<Book> Books;
-        public DbSet<State> States;
+        public DbSet<Book> Books { get; set; }
+        public DbSet<State> States { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Book>().HasOne(e => e.State).WithMany(e => e.Books).OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Book>().ToTable("Book");
+            modelBuilder.Entity<State>().ToTable("State");
+
+
         }
     }
 }
