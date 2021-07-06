@@ -14,6 +14,6 @@ namespace BooksList.Shared.Models
         [Key]
         public int IdState { get; set; }
         public string StateName { get; set; }
-        ICollection<Book> Books { get; set; }
+        public ICollection<Book> Books { get; set; }
     }
 }
