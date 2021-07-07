@@ -3,7 +3,6 @@
 @inject IBookRepository BookRepository
 
 <h3>Books</h3>
-
 @if (books == null)
 {
     <text>Loading...</text>
@@ -19,6 +18,7 @@ else if (books.Any() == false)
     <Column books="books"></Column>
     <h3>Second example</h3>
     <Column books="books1"></Column>
+
 
 }
 @code {
