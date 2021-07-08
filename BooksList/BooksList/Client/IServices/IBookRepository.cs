@@ -9,7 +9,7 @@ namespace BooksList.Client.IServices
         public List<Book> Books { get; set; }
 
         public Task GetBooksAsync();
-        public Task<List<Book>> GetBooksByIdAsync(int id);
+        public Task<List<List<Book>>> GetBooksByIdsAsync();
 
     }
 }
