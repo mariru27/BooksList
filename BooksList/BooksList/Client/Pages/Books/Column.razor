@@ -14,13 +14,15 @@ else if (books.Any() == false)
 else
 {
 
-    <div class="card-group">
-        
-        @foreach (var bo in books)
-        {
-            <Card book="bo"></Card>
-        }
-    </div>
+    <table>
+        <tr>
+            @foreach (var bo in books)
+            {
+                <Card book="bo"></Card>
+            }
+        </tr>
+     </table>
+
 
 }
 @code {
