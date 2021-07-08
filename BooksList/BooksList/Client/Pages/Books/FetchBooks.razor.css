@@ -1,0 +1,6 @@
+﻿.container{
+    min-width: 200px;
+    max-width: 400px;
+    flex-basis: auto; /* default value */
+    flex-grow: 1;
+}

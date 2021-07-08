@@ -1,0 +1,22 @@
+﻿/*.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 20rem);
+    grid-gap: 2rem;
+    justify-content: center;
+    padding-left: 0;
+}
+
+    .cards > li {
+        height: 10rem;
+        position: relative;
+        background-size: cover;
+        border-radius: 0.5rem;
+        list-style-type: none;
+        box-shadow: 0 3px 4px rgba(0,0,0,0.4);
+        transition: 0.1s ease-out;
+    }
+
+        .cards > li:hover {
+            transform: scale(1.02);
+        }
+*/

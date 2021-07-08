@@ -16,7 +16,7 @@ namespace BooksList.Client
             builder.RootComponents.Add<App>("#app");
 
             builder.Services.AddScoped<IBookRepository, BookRepository>();
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:3001/") });
 
             await builder.Build().RunAsync();
         }

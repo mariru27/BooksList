@@ -10,25 +10,26 @@
 else if (books.Any() == false)
 {
     <text>No Records Found.</text>
-}else
+}
+else
 {
 
-    <table>
-        <tr>
-            <th>
-                <h3>First example</h3>
-                <Column books="books"></Column>
-            </th>
 
-            <th>
-                <h3>Second example</h3>
-                <Column books="books"></Column>
-            </th>
-        </tr>
-    </table>
 
+<div class="d-inline-flex justify-content-start flex-row bd-highlight mb-3 container">
+    <div class="p-2 flex-fill">
+        <Column books="books"></Column>
+    </div>
+    <div class="p-2 flex-fill">
+        <Column books="books"></Column>
+    </div>
+    <div class="p-2 flex-fill">
+        <Column books="books"></Column>
+    </div>
+</div>
 
 }
+
 @code {
     List<Book> books { get; set; }
     List<Book> books1 { get; set; }

@@ -21,8 +21,10 @@ namespace BooksList.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             //connect to db
-            services.AddEntityFrameworkSqlServer().AddDbContext<BooksListContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")).EnableSensitiveDataLogging());
+            services.AddDbContext<BooksListContext>
+                (options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 
             services.AddControllersWithViews();
@@ -49,7 +51,8 @@ namespace BooksList.Server
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseCors(e => e.AllowAnyHeader().AllowAnyMethod().AllowCredentials()
+      .WithOrigins("https://localhost:5001"));
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

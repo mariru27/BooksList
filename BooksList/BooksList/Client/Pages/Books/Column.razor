@@ -1,5 +1,4 @@
-﻿@page "/books/column"
-
+﻿
 @inject IJSRuntime js
 @inject IBookRepository BookRepository
 
@@ -14,14 +13,16 @@ else if (books.Any() == false)
 else
 {
 
-    <table>
-        <tr>
+    <ul style="list-style-type: none; padding: 0">
+
             @foreach (var bo in books)
             {
-                <Card book="bo"></Card>
+                <li>
+                    <Card book="bo"></Card>
+                </li>
             }
-        </tr>
-     </table>
+    </ul>
+
 
 
 }
