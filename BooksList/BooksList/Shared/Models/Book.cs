@@ -4,6 +4,19 @@ namespace BooksList.Shared.Models
 {
     public class Book
     {
+        public Book()
+        {
+
+        }
+
+        public Book(Book book)
+        {
+            IdBook = book.IdBook;
+            Name = book.Name;
+            Author = book.Author;
+            Description = book.Description;
+            State = book.State;
+        }
         [Key]
         public int IdBook { get; set; }
         [Required]

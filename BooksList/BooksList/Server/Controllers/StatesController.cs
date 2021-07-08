@@ -1,4 +1,5 @@
 ﻿using BooksList.Server.Data;
+using BooksList.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -31,8 +32,11 @@ namespace BooksList.Server.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var states = await _context.States.Where(a => a.IdState == id).ToListAsync();
-            return Ok(states);
+            var books = await _context.States.Where(a => a.IdState == id).Join(_context.Books,
+                a => a.IdState,
+                b => b.State.IdState,
+                (a, b) => new Book(b)).ToListAsync();
+            return Ok(books);
         }
 
         // POST api/<StatusController>
