@@ -3,11 +3,11 @@
 @inject IBookRepository BookRepository
 
 <h3>Books</h3>
-@if (books == null)
+@if (WillRead == null)
 {
     <text>Loading...</text>
 }
-else if (books.Any() == false)
+else if (WillRead.Any() == false)
 {
     <text>No Records Found.</text>
 }
@@ -23,7 +23,7 @@ else
                 <h5 class="card-title">I want to read</h5>
             </div>
         </div>
-        <Column books="books"></Column>
+        <Column books="WillRead"></Column>
     </div>
 
     <div class="p-2 flex-fill">
@@ -32,7 +32,7 @@ else
                 <h5 class="card-title">In progress</h5>
             </div>
         </div>
-        <Column books="books"></Column>
+        <Column books="InProgress"></Column>
     </div>
     <div class="p-2 flex-fill">
         <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">
@@ -40,20 +40,21 @@ else
                 <h5 class="card-title">I read</h5>
             </div>
         </div>
-        <Column books="books"></Column>
+        <Column books="Read"></Column>
     </div>
 </div>
 
 }
 
 @code {
-    List<Book> books { get; set; }
-    List<Book> books1 { get; set; }
+    List<Book> WillRead { get; set; }
+    List<Book> InProgress { get; set; }
+    List<Book> Read { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        await BookRepository.GetBooksAsync();
-        books = BookRepository.Books;
-        books1 = BookRepository.Books;
+        WillRead = await BookRepository.GetBooksByIdAsync(1);
+        InProgress = await BookRepository.GetBooksByIdAsync(2);
+        Read = await BookRepository.GetBooksByIdAsync(3);
     }
 }
