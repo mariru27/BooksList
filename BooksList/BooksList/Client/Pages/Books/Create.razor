@@ -1,7 +1,18 @@
 ﻿@page "/books/create"
+@inject IBookRepository BookRepository
+@inject NavigationManager uriHelper
 
-<h3>Create</h3>
+
+
+<BookForm book="book" ButtonText="Create" OnValidSubmitt="AddNewBook"></BookForm>
 
 @code {
+    Book book = new();
+    async Task AddNewBook()
+    {
+        await BookRepository.AddBookAsync(book);
+        uriHelper.NavigateTo("/books/fetchbooks");
+        
+    }
 
 }

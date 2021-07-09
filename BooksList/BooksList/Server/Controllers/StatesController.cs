@@ -22,10 +22,10 @@ namespace BooksList.Server.Controllers
 
         // GET: api/<StatusController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-
-            return new string[] { "value1", "value2" };
+            var states = await _context.States.ToListAsync();
+            return Ok(states);
         }
 
         // GET api/<StatusController>/5
@@ -38,7 +38,6 @@ namespace BooksList.Server.Controllers
                 (a, b) => new Book(b)).ToListAsync();
             return Ok(books);
         }
-
         // POST api/<StatusController>
         [HttpPost]
         public void Post([FromBody] string value)
