@@ -3,11 +3,11 @@
 @inject IBookRepository BookRepository
 
 <h3>Books</h3>
-@if (bookslist == null)
+@if (book == null)
 {
     <text>Loading...</text>
 }
-else if (bookslist.Any() == false)
+else if (book.Any() == false)
 {
     <text>No Records Found.</text>
 }
@@ -23,7 +23,7 @@ else
                 <h5 class="card-title">I want to read</h5>
             </div>
         </div>
-        <Column books="bookslist[1]"></Column>
+        <Column books="book"></Column>
     </div>
 
     <div class="p-2 flex-fill">
@@ -32,7 +32,7 @@ else
                 <h5 class="card-title">In progress</h5>
             </div>
         </div>
-        <Column books="bookslist[2]"></Column>
+        <Column books="book"></Column>
     </div>
     <div class="p-2 flex-fill">
         <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">
@@ -40,19 +40,21 @@ else
                 <h5 class="card-title">I read</h5>
             </div>
         </div>
-        <Column books="bookslist[3]"></Column>
+        <Column books="book"></Column>
     </div>
 </div>
 
 }
 
 @code {
-    List<List<Book>> bookslist = new();
+    List<Book> book = new();
 
 
     protected override async Task OnInitializedAsync()
     {
-        bookslist = await BookRepository.GetBooksByIdsAsync();
+        book = await BookRepository.GetBooksByIdsAsync(2);
+        book = BookRepository.Books;
+        book.Add(new Book { Author = "test from blazor", Description = "test from blazor", Name = "test from blazor" });
 
     }
 }

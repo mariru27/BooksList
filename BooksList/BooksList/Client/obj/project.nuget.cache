@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3CTyaDrqhrwUnvGsQub7vYFvtGwCoKrNECBbrSaN80j9x49ldvE2FJxyLgbvXV0vCjfLzGRYJsmn1rnXocQOOQ==",
+  "dgSpecHash": "BqWL4gSFP1jmOs/cnSKf+C18mg1jfqvA3u7N9StLXIcYQWarioTIju4hGCixAuwsm7qFdRbPsTABDUPzWSZoSA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Marina Rusu\\Desktop\\BooksList\\BooksList\\BooksList\\Client\\BooksList.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Marina Rusu\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Marina Rusu\\.nuget\\packages\\jsconsoleextensionslib\\5.0.2\\jsconsoleextensionslib.5.0.2.nupkg.sha512",
     "C:\\Users\\Marina Rusu\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.7\\microsoft.aspnetcore.authorization.5.0.7.nupkg.sha512",
     "C:\\Users\\Marina Rusu\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.7\\microsoft.aspnetcore.components.5.0.7.nupkg.sha512",
     "C:\\Users\\Marina Rusu\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\5.0.7\\microsoft.aspnetcore.components.analyzers.5.0.7.nupkg.sha512",

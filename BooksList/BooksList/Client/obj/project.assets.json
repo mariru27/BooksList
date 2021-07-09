@@ -11,6 +11,24 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "JSconsoleExtensionsLib/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "5.0.1"
+        },
+        "compile": {
+          "lib/net5.0/JSconsoleExtensionsLib.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/JSconsoleExtensionsLib.dll": {}
+        },
+        "build": {
+          "buildTransitive/JSconsoleExtensionsLib.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/JSconsoleExtensionsLib.props": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/5.0.7": {
         "type": "package",
         "dependencies": {
@@ -1749,6 +1767,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "JSconsoleExtensionsLib": "5.0.2",
           "Microsoft.EntityFrameworkCore": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7"
         },
@@ -1768,6 +1787,24 @@
         },
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {}
+        }
+      },
+      "JSconsoleExtensionsLib/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "5.0.1"
+        },
+        "compile": {
+          "lib/net5.0/JSconsoleExtensionsLib.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/JSconsoleExtensionsLib.dll": {}
+        },
+        "build": {
+          "buildTransitive/JSconsoleExtensionsLib.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/JSconsoleExtensionsLib.props": {}
         }
       },
       "Microsoft.AspNetCore.Authorization/5.0.7": {
@@ -3518,6 +3555,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "JSconsoleExtensionsLib": "5.0.2",
           "Microsoft.EntityFrameworkCore": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7"
         },
@@ -3545,6 +3583,27 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "JSconsoleExtensionsLib/5.0.2": {
+      "sha512": "t7f7R305/KndWZH7hinJvwLlJt+zvm9nELYlV1/ZnaiL59ycNZpE2QjmNsc9CSb5EUp5T969lbpKnUkxLoGQ/g==",
+      "type": "package",
+      "path": "jsconsoleextensionslib/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/JSconsoleExtensionsLib.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/JSconsoleExtensionsLib.props",
+        "buildTransitive/JSconsoleExtensionsLib.props",
+        "jsconsoleextensionslib.5.0.2.nupkg.sha512",
+        "jsconsoleextensionslib.nuspec",
+        "lib/net5.0/JSconsoleExtensionsLib.dll",
+        "logo.png",
+        "staticwebassets/JSconsoleExtensions.cs",
+        "staticwebassets/JSconsoleExtensions.js",
+        "staticwebassets/background.png",
+        "staticwebassets/exampleJsInterop.js"
       ]
     },
     "Microsoft.AspNetCore.Authorization/5.0.7": {
@@ -8575,6 +8634,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "BooksList.Shared >= 1.0.0",
+      "JSconsoleExtensionsLib >= 5.0.2",
       "Microsoft.AspNetCore.Components.WebAssembly >= 5.0.7",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 5.0.7",
       "Microsoft.EntityFrameworkCore >= 5.0.7",
@@ -8626,6 +8686,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "JSconsoleExtensionsLib": {
+            "target": "Package",
+            "version": "[5.0.2, )"
+          },
           "Microsoft.AspNetCore.Components.WebAssembly": {
             "target": "Package",
             "version": "[5.0.7, )"

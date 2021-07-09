@@ -26,14 +26,12 @@ namespace BooksList.Client.Services
                 Books = result.ToList();
             }
         }
-        public async Task<List<List<Book>>> GetBooksByIdsAsync()
+        public async Task<List<Book>> GetBooksByIdsAsync(int id)
         {
 
-            List<List<Book>> bookslist = new();
-            bookslist.Add(await _httpClient.GetFromJsonAsync<List<Book>>($"api/user/{1}"));
-            bookslist.Add(await _httpClient.GetFromJsonAsync<List<Book>>($"api/user/{2}"));
-            bookslist.Add(await _httpClient.GetFromJsonAsync<List<Book>>($"api/user/{3}"));
-            return bookslist;
+            var book = await _httpClient.GetFromJsonAsync<List<Book>>($"api/books/{id}");
+            Books = book;
+            return book;
 
         }
 
