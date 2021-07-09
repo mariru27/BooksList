@@ -44,6 +44,12 @@ namespace BooksList.Client.Services
             return result.StatusCode;
         }
 
+        public async Task<State> GetStateById(int id)
+        {
+            List<State> states = await this.GetAllStates();
+            State state = states.Where(a => a.IdState == id).FirstOrDefault();
+            return state;
+        }
         public async Task<List<State>> GetAllStates()
         {
             var states = await _httpClient.GetFromJsonAsync<IEnumerable<State>>($"api/states");
