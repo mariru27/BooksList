@@ -14,14 +14,12 @@ namespace BooksList.Client.ViewModel
 
         }
 
-        public BookViewModel(Book book, int stateId)
+        public BookViewModel(Book book)
         {
             IdBook = book.IdBook;
             Name = book.Name;
             Author = book.Author;
             Description = book.Description;
-            State = book.State;
-            StateId = stateId;
         }
         [Key]
         public int IdBook { get; set; }
@@ -31,7 +29,6 @@ namespace BooksList.Client.ViewModel
         public string Author { get; set; }
         [MaxLength(500)]
         public string Description { get; set; }
-        public int StateId { get; set; }
-        public State State { get; set; }
+        public List<State> States { get; set; }
     }
 }
