@@ -103,6 +103,13 @@ using BooksList.Client.Services;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 14 "C:\Users\Marina Rusu\Desktop\BooksList\BooksList\BooksList\Client\_Imports.razor"
+using BooksList.Client.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {

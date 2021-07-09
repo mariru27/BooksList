@@ -26,8 +26,13 @@
             </div>
         </div>
     </div>
-
-
+    
+    <InputSelect @bind-Value="@book.State" class="form-select">
+        @foreach(var state in states)
+        {
+            <option value="@state"> @state.StateName</option>
+        }
+    </InputSelect>
     <button type="submit" class="btn btn-success">
         @ButtonText
     </button>
@@ -35,8 +40,16 @@
 </EditForm>
 
 
+
 @code {
     [Parameter] public Book book { get; set; }
     [Parameter] public string ButtonText { get; set; } = "Save";
     [Parameter] public EventCallback OnValidSubmitt { get; set; }
+
+    List<State> states = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        states = await BookRepository.GetAllStates();
+    }
 }

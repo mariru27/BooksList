@@ -8,11 +8,13 @@
 
 @code {
     Book book = new();
+
     async Task AddNewBook()
     {
         await BookRepository.AddBookAsync(book);
+
         uriHelper.NavigateTo("/books/fetchbooks");
-        
+
     }
 
 }

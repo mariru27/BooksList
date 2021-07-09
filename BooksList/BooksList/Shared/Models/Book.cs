@@ -17,6 +17,7 @@ namespace BooksList.Shared.Models
             Description = book.Description;
             State = book.State;
         }
+
         [Key]
         public int IdBook { get; set; }
         [Required]
