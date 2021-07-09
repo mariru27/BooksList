@@ -2,6 +2,7 @@
 using BooksList.Shared.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
@@ -34,6 +35,15 @@ namespace BooksList.Client.Services
             return Books;
 
         }
+
+        public async Task<HttpStatusCode> AddBookAsync(Book book)
+        {
+            if (_httpClient == null)
+                return HttpStatusCode.BadRequest;
+            var result = await _httpClient.PostAsJsonAsync("api/books", book);
+            return result.StatusCode;
+        }
+
 
     }
 }
