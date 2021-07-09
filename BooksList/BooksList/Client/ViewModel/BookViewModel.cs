@@ -9,6 +9,20 @@ namespace BooksList.Client.ViewModel
 {
     public class BookViewModel
     {
+        public BookViewModel()
+        {
+
+        }
+
+        public BookViewModel(Book book, int stateId)
+        {
+            IdBook = book.IdBook;
+            Name = book.Name;
+            Author = book.Author;
+            Description = book.Description;
+            State = book.State;
+            StateId = stateId;
+        }
         [Key]
         public int IdBook { get; set; }
         [Required]
