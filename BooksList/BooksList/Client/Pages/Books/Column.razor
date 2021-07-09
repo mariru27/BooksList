@@ -8,19 +8,23 @@
 }
 else if (books.Any() == false)
 {
-    <text>No Records Found.</text>
+    <div class="card border-warning mb-3" style="max-width: 30rem;">
+        <div class="card-body">
+            No Records Found.
+        </div>
+    </div>
 }
 else
 {
 
     <ul style="list-style-type: none; padding: 0">
 
-            @foreach (var bo in books)
-            {
-                <li>
-                    <Card book="bo"></Card>
-                </li>
-            }
+        @foreach (var bo in books)
+        {
+            <li>
+                <Card book="bo"></Card>
+            </li>
+        }
     </ul>
 
 
