@@ -1,9 +1,9 @@
 ﻿@inject IBookRepository BookRepository
 
-
 <EditForm Model="@book" OnValidSubmit="@OnValidSubmitt">
     <DataAnnotationsValidator />
     <ValidationSummary />
+
     <div class="form-group">
         <label>Book Name:</label>
         <div>
@@ -26,13 +26,14 @@
             </div>
         </div>
     </div>
-    
-    <InputSelect @bind-Value="@book.State" class="form-select">
-        @foreach(var state in states)
+
+    <InputSelect @bind-Value="book.State">
+        @foreach (var state in states)
         {
-            <option value="@state"> @state.StateName</option>
+            <option value="@state.IdState"> @state.StateName</option>
         }
     </InputSelect>
+    <br/>
     <button type="submit" class="btn btn-success">
         @ButtonText
     </button>
