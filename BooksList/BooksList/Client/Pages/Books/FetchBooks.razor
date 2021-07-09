@@ -3,58 +3,58 @@
 @inject IBookRepository BookRepository
 
 <h3>Books</h3>
-@if (book == null)
+@if (books == null)
 {
     <text>Loading...</text>
 }
-else if (book.Any() == false)
+else if (books.Any() == false)
 {
     <text>No Records Found.</text>
+
 }
 else
 {
 
 
 
-<div class="d-flex justify-content-start flex-row bd-highlight mb-3" >
-    <div class="p-2 flex-fill">
-        <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">        
-            <div class="card-body">
-                <h5 class="card-title">I want to read</h5>
+    <div class="d-flex justify-content-start flex-row bd-highlight mb-3">
+        <div class="p-2 flex-fill">
+            <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">
+                <div class="card-body">
+                    <h5 class="card-title">I want to read</h5>
+                </div>
             </div>
+            <Column books="books[0]"></Column>
         </div>
-        <Column books="book"></Column>
-    </div>
 
-    <div class="p-2 flex-fill">
-        <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">
-            <div class="card-body">
-                <h5 class="card-title">In progress</h5>
+        <div class="p-2 flex-fill">
+            <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">
+                <div class="card-body">
+                    <h5 class="card-title">In progress</h5>
+                </div>
             </div>
+            <Column books="books[1]"></Column>
         </div>
-        <Column books="book"></Column>
-    </div>
-    <div class="p-2 flex-fill">
-        <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">
-            <div class="card-body">
-                <h5 class="card-title">I read</h5>
+        <div class="p-2 flex-fill">
+            <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">
+                <div class="card-body">
+                    <h5 class="card-title">I read</h5>
+                </div>
             </div>
+            <Column books="books[2]"></Column>
         </div>
-        <Column books="book"></Column>
     </div>
-</div>
 
 }
 
 @code {
-    List<Book> book = new();
+    List<List<Book>> books = new();
 
 
     protected override async Task OnInitializedAsync()
     {
-        book = await BookRepository.GetBooksByIdsAsync(2);
-        book = BookRepository.Books;
-        book.Add(new Book { Author = "test from blazor", Description = "test from blazor", Name = "test from blazor" });
-
+        books.Add(await BookRepository.GetBooksByIdsAsync(1));
+        books.Add(await BookRepository.GetBooksByIdsAsync(2));
+        books.Add(await BookRepository.GetBooksByIdsAsync(3));
     }
 }

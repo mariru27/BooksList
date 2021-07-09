@@ -29,9 +29,9 @@ namespace BooksList.Client.Services
         public async Task<List<Book>> GetBooksByIdsAsync(int id)
         {
 
-            var book = await _httpClient.GetFromJsonAsync<List<Book>>($"api/books/{id}");
-            Books = book;
-            return book;
+            var book = await _httpClient.GetFromJsonAsync<IEnumerable<Book>>($"api/states/{id}");
+            Books = book.ToList();
+            return Books;
 
         }
 
