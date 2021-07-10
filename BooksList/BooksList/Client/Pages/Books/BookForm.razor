@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <InputSelect @bind-Value="book.State">
+    <InputSelect @bind-Value="book.StateId">
         @foreach (var state in states)
         {
             <option value="@state.IdState"> @state.StateName</option>

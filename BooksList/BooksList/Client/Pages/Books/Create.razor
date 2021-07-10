@@ -11,8 +11,10 @@
 
     async Task AddNewBook()
     {
-        State state = await BookRepository.GetStateById(1);
-        book.State = state;
+
+        // State state = await BookRepository.GetStateById(1);
+        // book.State = state;
+        ++book.StateId;
         await BookRepository.AddBookAsync(book);
 
         uriHelper.NavigateTo("/books/fetchbooks");

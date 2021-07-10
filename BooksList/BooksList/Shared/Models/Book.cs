@@ -16,6 +16,7 @@ namespace BooksList.Shared.Models
             Author = book.Author;
             Description = book.Description;
             State = book.State;
+            StateId = book.StateId;
         }
 
         [Key]
