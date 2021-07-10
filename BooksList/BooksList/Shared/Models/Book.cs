@@ -26,6 +26,7 @@ namespace BooksList.Shared.Models
         public string Author { get; set; }
         [MaxLength(500)]
         public string Description { get; set; }
+        public int StateId { get; set; }
         public State State { get; set; }
     }
 }
