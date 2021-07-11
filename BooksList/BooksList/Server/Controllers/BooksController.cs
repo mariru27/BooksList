@@ -2,6 +2,7 @@
 using BooksList.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace BooksList.Server.Controllers
@@ -43,14 +44,19 @@ namespace BooksList.Server.Controllers
 
         // PUT api/<BooksController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task PutAsync(Book book)
         {
+            _context.Books.Update(book);
+            await _context.SaveChangesAsync();
         }
 
         // DELETE api/<BooksController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
+            var book = _context.Books.Where(a => a.IdBook == id).FirstOrDefault();
+            _context.Books.Remove(book);
+            await _context.SaveChangesAsync();
         }
     }
 }
