@@ -1,8 +1,9 @@
-﻿
+﻿@inject IJSRuntime JsRuntime
+
 <div class="card border-dark mb-3" style="max-width: 30rem;">
     <div class="card-header">
         @book.Name
-        <button type="button" class="btn btn-outline-danger float-right mr-1">Delete</button>
+        <button type="button" class="btn btn-outline-danger float-right mr-1" @onclick="DeleteBook">Delete</button>
         <button type="button" class="btn btn-outline-primary float-right mr-1">Edit</button>
     </div>
     <div class="card-body">
@@ -14,5 +15,11 @@
 @code {
     [Parameter] public Book book { get; set; }
 
-    
+    public async void DeleteBook()
+    {
+
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to delete book : "+ book.Name +"?"); 
+
+    }
+
 }
