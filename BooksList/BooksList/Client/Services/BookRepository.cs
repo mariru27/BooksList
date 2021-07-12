@@ -6,6 +6,11 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
 
 namespace BooksList.Client.Services
 {
@@ -56,5 +61,15 @@ namespace BooksList.Client.Services
             return states.ToList();
         }
 
+        public async void UpdateBookAsync(Book book)
+        {
+            await _httpClient.PutAsJsonAsync($"api/book", book);
+        }
+
+
+        public async void DeleteBookAsync(int id)
+        {
+            await _httpClient.DeleteAsync($"api/books/{id}");
+        }
     }
 }
