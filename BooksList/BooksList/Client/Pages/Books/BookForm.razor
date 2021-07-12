@@ -58,6 +58,7 @@
     protected override async Task OnInitializedAsync()
     {
         states = await BookRepository.GetAllStates();
-        book.StateId = 1;
+        if (book.StateId == 0)
+            book.StateId = 1;
     }
 }
