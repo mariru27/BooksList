@@ -118,7 +118,7 @@ using BooksList.Client.ViewModel;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\Marina Rusu\Desktop\BooksList\BooksList\BooksList\Client\Shared\NavMenu.razor"
+#line 18 "C:\Users\Marina Rusu\Desktop\BooksList\BooksList\BooksList\Client\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
