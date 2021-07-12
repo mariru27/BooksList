@@ -14,7 +14,7 @@
         <div>
             <label>Author:</label>
             <div>
-                <InputText @bind-Value="@book.Author" class="form-control"/>
+                <InputText @bind-Value="@book.Author" class="form-control" />
             </div>
         </div>
     </div>
@@ -22,27 +22,30 @@
         <div>
             <label>Description:</label>
             <div>
-                <InputText @bind-Value="@book.Description" class="form-control"/>
+                <InputText @bind-Value="@book.Description" class="form-control" />
             </div>
         </div>
     </div>
 
-        Select book state:
+    Select book state:
 
-    @if(states.Any())
+    @if (states.Any())
     {
 
         <InputSelect @bind-Value="book.StateId" class="form-control">
             @foreach (var state in states)
-            {
-               <option value="@state.IdState"> @state.StateName</option>
-            }
+                {
+                <option value="@state.IdState"> @state.StateName</option>
+                }
         </InputSelect>
     }
-    <br/>
+    <br />
     <button type="submit" class="btn btn-success">
         @ButtonText
     </button>
+
+    <a class="btn btn-secondary" href="books/fetchbooks">Cancel</a>
+
 
 </EditForm>
 
