@@ -39,15 +39,14 @@ namespace BooksList.Client.Services
             Books = book.ToList();
             return Books;
 
-        }        
-        //public async Task<Book> GetBookByIdAsync(int id)
-        //{
+        }
+        public async Task<Book> GetBookByIdAsync(int id)
+        {
 
-        //    var book = await _httpClient.GetFromJsonAsync<IEnumerable<Book>>($"api/states/{id}");
-        //    Books = book.ToList();
-        //    return Books;
+            var book = await _httpClient.GetFromJsonAsync<Book>($"api/book/{id}");
+            return book;
 
-        //}
+        }
 
         public async Task<HttpStatusCode> AddBookAsync(Book book)
         {
@@ -74,10 +73,10 @@ namespace BooksList.Client.Services
             await _httpClient.PutAsJsonAsync($"api/book", book);
         }
 
-
         public async Task DeleteBookAsync(int id)
         {
             await _httpClient.DeleteAsync($"api/books/{id}");
         }
+
     }
 }
