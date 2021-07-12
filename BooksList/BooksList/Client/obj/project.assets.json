@@ -8638,6 +8638,7 @@
       "Microsoft.AspNetCore.Components.WebAssembly >= 5.0.7",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 5.0.7",
       "Microsoft.EntityFrameworkCore >= 5.0.7",
+      "Microsoft.EntityFrameworkCore.Design >= 5.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.7",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.7",
       "System.Net.Http.Json >= 5.0.0"
@@ -8700,6 +8701,12 @@
             "version": "[5.0.7, )"
           },
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.7, )"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.7, )"
           },

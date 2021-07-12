@@ -29,12 +29,16 @@
 
         Select book state:
 
-    <InputSelect @bind-Value="book.StateId" class="form-control">
-        @foreach (var state in states)
+    @if(states.Any())
+    {
+
+<InputSelect @bind-Value="book.StateId" class="form-control">
+    @foreach (var state in states)
         {
-            <option value="@state.IdState" > @state.StateName</option>
+        <option value="@state.IdState"> @state.StateName</option>
         }
-    </InputSelect>
+</InputSelect>
+    }
     <br/>
     <button type="submit" class="btn btn-success">
         @ButtonText

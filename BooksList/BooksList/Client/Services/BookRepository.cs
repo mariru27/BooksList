@@ -52,7 +52,7 @@ namespace BooksList.Client.Services
         }
         public async Task<List<State>> GetAllStates()
         {
-            var states = await _httpClient.GetFromJsonAsync<IEnumerable<State>>($"api/states");
+            IEnumerable<State> states = await _httpClient.GetFromJsonAsync<IEnumerable<State>>($"api/states");
             return states.ToList();
         }
 
