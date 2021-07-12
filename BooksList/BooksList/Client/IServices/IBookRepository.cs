@@ -13,8 +13,8 @@ namespace BooksList.Client.IServices
         public Task<HttpStatusCode> AddBookAsync(Book book);
         public Task<List<State>> GetAllStates();
         public Task<State> GetStateById(int id);
-        public void DeleteBookAsync(int id);
-        public void UpdateBookAsync(Book book);
+        public Task DeleteBookAsync(int id);
+        public Task UpdateBookAsync(Book book);
 
     }
 }

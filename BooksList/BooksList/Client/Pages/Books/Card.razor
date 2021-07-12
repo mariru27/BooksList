@@ -1,4 +1,6 @@
 ﻿@inject IJSRuntime JsRuntime
+@inject IBookRepository BookRepository
+@inject NavigationManager uriHelper
 
 <div class="card border-dark mb-3" style="max-width: 30rem;">
     <div class="card-header">
@@ -14,11 +16,17 @@
 
 @code {
     [Parameter] public Book book { get; set; }
+   // [Parameter] public EventCallback OnConfirmRefresh { get; set; }
 
     public async void DeleteBook()
     {
 
-        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to delete book : "+ book.Name +"?"); 
+
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to delete book : " + book.Name + "?");
+        if (confirmed)
+            await BookRepository.DeleteBookAsync(book.IdBook);
+
+        //await OnConfirmRefresh();
 
     }
 

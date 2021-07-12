@@ -61,13 +61,13 @@ namespace BooksList.Client.Services
             return states.ToList();
         }
 
-        public async void UpdateBookAsync(Book book)
+        public async Task UpdateBookAsync(Book book)
         {
             await _httpClient.PutAsJsonAsync($"api/book", book);
         }
 
 
-        public async void DeleteBookAsync(int id)
+        public async Task DeleteBookAsync(int id)
         {
             await _httpClient.DeleteAsync($"api/books/{id}");
         }
