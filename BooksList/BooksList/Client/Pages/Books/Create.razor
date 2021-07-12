@@ -11,12 +11,9 @@
 
     async Task AddNewBook()
     {
-        //if (book.StateId == 0)
-        //    book.StateId = 1;
         await BookRepository.AddBookAsync(book);
 
         uriHelper.NavigateTo("/books/fetchbooks");
-
     }
 
 }

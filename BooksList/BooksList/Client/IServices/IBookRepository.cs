@@ -15,6 +15,8 @@ namespace BooksList.Client.IServices
         public Task<State> GetStateById(int id);
         public Task DeleteBookAsync(int id);
         public Task UpdateBookAsync(Book book);
+        public Task<Book> GetBookByIdAsync(int id);
+
 
     }
 }

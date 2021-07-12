@@ -1,7 +1,29 @@
-﻿@page "/books/edit/IdBook" 
+﻿@page "/books/edit/{id:int}"
+@inject IBookRepository BookRepository
+@inject HttpClient http
+@inject NavigationManager uriHelper
+@inject IJSRuntime js
 
 <h3>Edit</h3>
 
+<BookForm book="book" ButtonText="Edit" OnValidSubmitt="EditBook"></BookForm>
+
 @code {
+    [Parameter] public int id { get; set; }
+    [Parameter] public Book book { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Edit";
+
+    protected async override Task OnParametersSetAsync()
+    {
+        book = await BookRepository.GetBookByIdAsync(id);
+    }
+
+    public async void EditBook()
+    {
+
+        await BookRepository.UpdateBookAsync(book);
+        await js.InvokeVoidAsync("alert", $"Updated Successfully!");
+        uriHelper.NavigateTo("/books/fetchbooks");
+    }
 
 }

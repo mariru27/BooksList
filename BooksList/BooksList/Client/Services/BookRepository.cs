@@ -6,11 +6,6 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
 
 namespace BooksList.Client.Services
 {
@@ -70,7 +65,7 @@ namespace BooksList.Client.Services
 
         public async Task UpdateBookAsync(Book book)
         {
-            await _httpClient.PutAsJsonAsync($"api/book", book);
+            await _httpClient.PutAsJsonAsync($"api/books", book);
         }
 
         public async Task DeleteBookAsync(int id)

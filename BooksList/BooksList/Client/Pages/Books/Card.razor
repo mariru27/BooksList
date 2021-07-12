@@ -6,7 +6,9 @@
     <div class="card-header">
         @book.Name
         <button type="button" class="btn btn-outline-danger float-right mr-1" @onclick="DeleteBook">Delete</button>
-        <button type="button" href="books/create/@book.IdBook" class="btn btn-outline-primary float-right mr-1">Edit</button>
+        @*<button type="button" href="/books/edit/@book.IdBook" class="btn btn-outline-primary float-right mr-1">Edit</button>*@
+        <a class="btn btn-outline-primary float-right mr-1" href="Books/Edit/@book.IdBook">Edit</a>
+
     </div>
     <div class="card-body">
         <h5 class="card-title">@book.Author</h5>

@@ -43,10 +43,11 @@ namespace BooksList.Server.Controllers
         }
 
         // PUT api/<BooksController>/5
-        [HttpPut("{id}")]
+        [HttpPut]
         public async Task PutAsync(Book book)
         {
             _context.Books.Update(book);
+            _context.Entry(book).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 
