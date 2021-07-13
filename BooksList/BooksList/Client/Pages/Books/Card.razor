@@ -25,6 +25,7 @@
         if (confirmed)
             await BookRepository.DeleteBookAsync(book.IdBook);
 
+        uriHelper.NavigateTo("/books/fetchbooks", true);
 
     }
 

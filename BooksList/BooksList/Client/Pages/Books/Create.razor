@@ -2,9 +2,7 @@
 @inject IBookRepository BookRepository
 @inject NavigationManager uriHelper
 
-
-
-<BookForm book="book" ButtonText="Create" OnValidSubmitt="AddNewBook"></BookForm>
+<BookForm book="book" ButtonText="Create" OnValidSubmitt="AddNewBook"/>
 
 @code {
     [CascadingParameter] public Book book { get; set; } = new();

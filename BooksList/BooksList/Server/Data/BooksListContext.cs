@@ -19,7 +19,6 @@ namespace BooksList.Server.Data
             modelBuilder.Entity<Book>().ToTable("Book");
             modelBuilder.Entity<State>().ToTable("State");
 
-
         }
     }
 }

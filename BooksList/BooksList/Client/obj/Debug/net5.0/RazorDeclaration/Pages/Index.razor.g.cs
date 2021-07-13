@@ -110,6 +110,13 @@ using BooksList.Client.ViewModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 15 "C:\Users\Marina Rusu\Desktop\BooksList\BooksList\BooksList\Client\_Imports.razor"
+using BooksList.Client.Pages.Books;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -118,6 +125,19 @@ using BooksList.Client.ViewModel;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 6 "C:\Users\Marina Rusu\Desktop\BooksList\BooksList\BooksList\Client\Pages\Index.razor"
+      
+    protected override void OnInitialized()
+    {
+        uriHelper.NavigateTo("/books/fetchbooks");
+
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager uriHelper { get; set; }
     }
 }
 #pragma warning restore 1591
